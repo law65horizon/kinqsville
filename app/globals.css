@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-charcoal: #121212;
+  --color-cream: #F9F5F2;
+  --color-cream-dim: #EDE9E6;
+  --color-terracotta: #B35433;
+  --color-terracotta-light: #CC6744;
+  --color-gold: #C5A059;
+  --color-gold-light: #D4B87A;
+  --color-surface: #fbf9f8;
+  --color-surface-low: #f5f3f3;
+  --color-surface-container: #efeded;
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #444748;
+  --color-outline: #747878;
+  --color-outline-variant: #c4c7c7;
+
+  /* Fonts */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+
+  /* Font sizes */
+  --font-size-display-xl: clamp(2.5rem, 6vw, 4rem);
+  --font-size-headline-lg: clamp(2rem, 4vw, 3rem);
+  --font-size-headline-md: clamp(1.5rem, 3vw, 2rem);
+  --font-size-headline-sm: 1.5rem;
+  --font-size-body-lg: 1.125rem;
+  --font-size-body-md: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-label-caps: 0.75rem;
+
+  /* Spacing */
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+
+  /* Max width */
+  --container-site: 1280px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #121212;
+  color: #F9F5F2;
+  padding: 0.5rem 1rem;
+  z-index: 9999;
+  font-size: 0.875rem;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid #B35433;
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #EDE9E6; }
+::-webkit-scrollbar-thumb { background: #B35433; border-radius: 3px; }
+
+::selection { background: #B35433; color: white; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+
+/* Font family utilities */
+.font-display {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+.font-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Font size utilities */
+.text-display-xl {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.text-headline-lg { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; }
+.text-headline-md { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.3; }
+.text-headline-sm { font-size: 1.5rem; line-height: 1.4; }
+.text-body-lg { font-size: 1.125rem; line-height: 1.7; }
+.text-body-md { font-size: 1rem; line-height: 1.7; }
+.text-body-sm { font-size: 0.875rem; line-height: 1.5; }
+.text-label-caps { font-size: 0.75rem; line-height: 1; letter-spacing: 0.1em; font-weight: 600; }
+
+/* Color utilities */
+.bg-cream { background-color: #F9F5F2; }
+.bg-cream-dim { background-color: #EDE9E6; }
+.bg-charcoal { background-color: #121212; }
+.bg-terracotta { background-color: #B35433; }
+.bg-terracotta-light { background-color: #CC6744; }
+.bg-surface-container { background-color: #efeded; }
+.bg-surface-low { background-color: #f5f3f3; }
+.bg-white { background-color: #ffffff; }
+
+.text-charcoal { color: #121212; }
+.text-cream { color: #F9F5F2; }
+.text-terracotta { color: #B35433; }
+.text-terracotta-light { color: #CC6744; }
+.text-gold { color: #C5A059; }
+.text-on-surface-variant { color: #444748; }
+.text-white { color: #ffffff; }
+
+.border-cream-dim { border-color: #EDE9E6; }
+.border-charcoal { border-color: #121212; }
+.border-terracotta { border-color: #B35433; }
+.border-gold { border-color: #C5A059; }
+.border-white { border-color: #ffffff; }
+
+/* Layout utilities */
+.max-w-site { max-width: 1280px; }
+.py-section { padding-top: 6rem; padding-bottom: 6rem; }
+.py-section-sm { padding-top: 4rem; padding-bottom: 4rem; }
+
+/* Gradient */
+.bg-gradient-charcoal-r {
+  background: linear-gradient(to right, rgba(18,18,18,0.85), rgba(18,18,18,0.6), transparent);
+}
